@@ -1,0 +1,3534 @@
+{
+    "header": {
+        "responseId": "edd9406c-fe55-44c8-9839-c3774e0d27b9",
+        "msgType": "ContainerListMsg",
+        "code": "0",
+        "requestTime": null,
+        "clientCode": null,
+        "msg": "Successful invocation"
+    },
+    "body": [
+        {
+            "containerCode": "00000016",
+            "containerCategory": "T0000006",
+            "locationCode": "ELEVATOR",
+            "areaCode": "",
+            "stationCode": "ELEVATOR",
+            "status": 1,
+            "taskCode": null
+        },
+        {
+            "containerCode": "00000038",
+            "containerCategory": "T2000001",
+            "locationCode": "",
+            "areaCode": "",
+            "stationCode": null,
+            "status": 0,
+            "taskCode": null
+        },
+        {
+            "containerCode": "00000041",
+            "containerCategory": "T2000001",
+            "locationCode": "",
+            "areaCode": "",
+            "stationCode": null,
+            "status": 0,
+            "taskCode": null
+        },
+        {
+            "containerCode": "00000048",
+            "containerCategory": "T2000001",
+            "locationCode": "B3F1_2_OUT",
+            "areaCode": "",
+            "stationCode": "B3F1_OUT",
+            "status": 1,
+            "taskCode": null
+        },
+        {
+            "containerCode": "00000049",
+            "containerCategory": "T2000001",
+            "locationCode": "PACKING_2",
+            "areaCode": "",
+            "stationCode": "PACK",
+            "status": 1,
+            "taskCode": null
+        },
+        {
+            "containerCode": "00000050",
+            "containerCategory": "T2000001",
+            "locationCode": "",
+            "areaCode": "",
+            "stationCode": null,
+            "status": 0,
+            "taskCode": null
+        },
+        {
+            "containerCode": "00000051",
+            "containerCategory": "T2000001",
+            "locationCode": "PACKING_1",
+            "areaCode": "",
+            "stationCode": "PACK",
+            "status": 1,
+            "taskCode": null
+        },
+        {
+            "containerCode": "00000052",
+            "containerCategory": "T2000001",
+            "locationCode": null,
+            "areaCode": "",
+            "stationCode": null,
+            "status": 0,
+            "taskCode": null
+        },
+        {
+            "containerCode": "00000053",
+            "containerCategory": "T2000001",
+            "locationCode": null,
+            "areaCode": "",
+            "stationCode": null,
+            "status": 0,
+            "taskCode": null
+        }
+    ]
+}
+
+{
+    "header": {
+        "responseId": "ca61ae83-0c5b-4560-9e3d-00c437d1b73b",
+        "msgType": "WorkflowListMsg",
+        "code": "0",
+        "requestTime": null,
+        "clientCode": null,
+        "msg": "Successful invocation"
+    },
+    "body": [
+        {
+            "workflowName": "PACK-PACK",
+            "workflowCode": "F202512120000006",
+            "priority": 1,
+            "purpose": 1,
+            "status": 1,
+            "robots": [],
+            "nodes": [
+                {
+                    "nodeParentCode": "0",
+                    "nodeParentName": "Start",
+                    "nodeParentType": 1,
+                    "nodeCode": "90001",
+                    "nodeName": "PACK",
+                    "nodeType": 2,
+                    "priority": 1,
+                    "flowRule": "lang.ark.task.rule.default"
+                }
+            ]
+        },
+        {
+            "workflowName": "B3F1 >>> LIFT",
+            "workflowCode": "F202512240000001",
+            "priority": 1,
+            "purpose": 1,
+            "status": 1,
+            "robots": [],
+            "nodes": [
+                {
+                    "nodeParentCode": "0",
+                    "nodeParentName": "Start",
+                    "nodeParentType": 1,
+                    "nodeCode": "90000",
+                    "nodeName": "90000",
+                    "nodeType": 2,
+                    "priority": 2,
+                    "flowRule": "lang.ark.task.rule.default"
+                }
+            ]
+        },
+        {
+            "workflowName": "B3F1 >>> PACK",
+            "workflowCode": "F202512240000003",
+            "priority": 1,
+            "purpose": 1,
+            "status": 1,
+            "robots": [],
+            "nodes": [
+                {
+                    "nodeParentCode": "0",
+                    "nodeParentName": "Start",
+                    "nodeParentType": 1,
+                    "nodeCode": "90000",
+                    "nodeName": "90000",
+                    "nodeType": 2,
+                    "priority": 2,
+                    "flowRule": "lang.ark.task.rule.default"
+                }
+            ]
+        },
+        {
+            "workflowName": "B4F1_TO_B3F1",
+            "workflowCode": "F202512240000004",
+            "priority": 1,
+            "purpose": 1,
+            "status": 2,
+            "robots": [],
+            "nodes": [
+                {
+                    "nodeParentCode": "0",
+                    "nodeParentName": "Start",
+                    "nodeParentType": 1,
+                    "nodeCode": "90002",
+                    "nodeName": "90001",
+                    "nodeType": 2,
+                    "priority": 2,
+                    "flowRule": "lang.ark.task.rule.default"
+                }
+            ]
+        },
+        {
+            "workflowName": "B4F1_TO_PACK",
+            "workflowCode": "F202512240000005",
+            "priority": 1,
+            "purpose": 1,
+            "status": 2,
+            "robots": [],
+            "nodes": [
+                {
+                    "nodeParentCode": "0",
+                    "nodeParentName": "Start",
+                    "nodeParentType": 1,
+                    "nodeCode": "90002",
+                    "nodeName": "90001",
+                    "nodeType": 2,
+                    "priority": 2,
+                    "flowRule": "lang.ark.task.rule.default"
+                }
+            ]
+        },
+        {
+            "workflowName": "PACK >>> B3F1",
+            "workflowCode": "F202512240000006",
+            "priority": 1,
+            "purpose": 1,
+            "status": 1,
+            "robots": [],
+            "nodes": [
+                {
+                    "nodeParentCode": "0",
+                    "nodeParentName": "Start",
+                    "nodeParentType": 1,
+                    "nodeCode": "90001",
+                    "nodeName": "90001",
+                    "nodeType": 2,
+                    "priority": 2,
+                    "flowRule": "lang.ark.task.rule.default"
+                }
+            ]
+        },
+        {
+            "workflowName": "PACK_TO_B4F1",
+            "workflowCode": "F202512240000007",
+            "priority": 1,
+            "purpose": 1,
+            "status": 2,
+            "robots": [],
+            "nodes": [
+                {
+                    "nodeParentCode": "0",
+                    "nodeParentName": "Start",
+                    "nodeParentType": 1,
+                    "nodeCode": "90001",
+                    "nodeName": "90001",
+                    "nodeType": 2,
+                    "priority": 2,
+                    "flowRule": "lang.ark.task.rule.default"
+                }
+            ]
+        },
+        {
+            "workflowName": "PACK >>> LIFT",
+            "workflowCode": "F202512240000008",
+            "priority": 1,
+            "purpose": 1,
+            "status": 1,
+            "robots": [],
+            "nodes": [
+                {
+                    "nodeParentCode": "0",
+                    "nodeParentName": "Start",
+                    "nodeParentType": 1,
+                    "nodeCode": "90001",
+                    "nodeName": "90001",
+                    "nodeType": 2,
+                    "priority": 2,
+                    "flowRule": "lang.ark.task.rule.default"
+                }
+            ]
+        },
+        {
+            "workflowName": "LIFT >>> PACK",
+            "workflowCode": "F202512260000001",
+            "priority": 1,
+            "purpose": 1,
+            "status": 1,
+            "robots": [],
+            "nodes": [
+                {
+                    "nodeParentCode": "0",
+                    "nodeParentName": "Start",
+                    "nodeParentType": 1,
+                    "nodeCode": "90005",
+                    "nodeName": "90001",
+                    "nodeType": 2,
+                    "priority": 2,
+                    "flowRule": "lang.ark.task.rule.default"
+                }
+            ]
+        },
+        {
+            "workflowName": "LIFT >>> B3F1",
+            "workflowCode": "F202512260000002",
+            "priority": 1,
+            "purpose": 1,
+            "status": 1,
+            "robots": [],
+            "nodes": [
+                {
+                    "nodeParentCode": "0",
+                    "nodeParentName": "Start",
+                    "nodeParentType": 1,
+                    "nodeCode": "90005",
+                    "nodeName": "90001",
+                    "nodeType": 2,
+                    "priority": 2,
+                    "flowRule": "lang.ark.task.rule.default"
+                }
+            ]
+        },
+        {
+            "workflowName": "B3F1 >>> PP_HDD",
+            "workflowCode": "F202512260000006",
+            "priority": 1,
+            "purpose": 1,
+            "status": 1,
+            "robots": [],
+            "nodes": [
+                {
+                    "nodeParentCode": "0",
+                    "nodeParentName": "Start",
+                    "nodeParentType": 1,
+                    "nodeCode": "90000",
+                    "nodeName": "90000",
+                    "nodeType": 2,
+                    "priority": 2,
+                    "flowRule": "lang.ark.task.rule.default"
+                }
+            ]
+        },
+        {
+            "workflowName": "PP_HDD >>> B3F1",
+            "workflowCode": "F202512260000007",
+            "priority": 1,
+            "purpose": 1,
+            "status": 1,
+            "robots": [],
+            "nodes": [
+                {
+                    "nodeParentCode": "0",
+                    "nodeParentName": "Start",
+                    "nodeParentType": 1,
+                    "nodeCode": "90006",
+                    "nodeName": "90001",
+                    "nodeType": 2,
+                    "priority": 2,
+                    "flowRule": "lang.ark.task.rule.default"
+                }
+            ]
+        },
+        {
+            "workflowName": "000000001—100000005",
+            "workflowCode": "F202601050000001",
+            "priority": 1,
+            "purpose": 1,
+            "status": 1,
+            "robots": [],
+            "nodes": [
+                {
+                    "nodeParentCode": "0",
+                    "nodeParentName": "Start",
+                    "nodeParentType": 1,
+                    "nodeCode": "000000001",
+                    "nodeName": "01",
+                    "nodeType": 10,
+                    "priority": 1,
+                    "flowRule": "lang.ark.task.rule.default"
+                },
+                {
+                    "nodeParentCode": "01",
+                    "nodeParentName": "000000001",
+                    "nodeParentType": null,
+                    "nodeCode": "100000005",
+                    "nodeName": "100000005",
+                    "nodeType": 10,
+                    "priority": 1,
+                    "flowRule": "lang.ark.task.rule.default"
+                },
+                {
+                    "nodeParentCode": "100000005",
+                    "nodeParentName": "100000005",
+                    "nodeParentType": null,
+                    "nodeCode": "0",
+                    "nodeName": "End",
+                    "nodeType": 0,
+                    "priority": 1,
+                    "flowRule": "lang.ark.task.rule.default"
+                }
+            ]
+        },
+        {
+            "workflowName": "200000008—100000005",
+            "workflowCode": "F202601050000002",
+            "priority": 1,
+            "purpose": 1,
+            "status": 1,
+            "robots": [],
+            "nodes": [
+                {
+                    "nodeParentCode": "0",
+                    "nodeParentName": "Start",
+                    "nodeParentType": 1,
+                    "nodeCode": "200000008",
+                    "nodeName": "",
+                    "nodeType": 10,
+                    "priority": 1,
+                    "flowRule": "lang.ark.task.rule.default"
+                },
+                {
+                    "nodeParentCode": "",
+                    "nodeParentName": "200000008",
+                    "nodeParentType": null,
+                    "nodeCode": "100000005",
+                    "nodeName": "100000005",
+                    "nodeType": 10,
+                    "priority": 1,
+                    "flowRule": "lang.ark.task.rule.default"
+                },
+                {
+                    "nodeParentCode": "100000005",
+                    "nodeParentName": "100000005",
+                    "nodeParentType": null,
+                    "nodeCode": "0",
+                    "nodeName": "End",
+                    "nodeType": 0,
+                    "priority": 1,
+                    "flowRule": "lang.ark.task.rule.default"
+                }
+            ]
+        },
+        {
+            "workflowName": "TEST-ROT-HDD",
+            "workflowCode": "F000011",
+            "priority": 1,
+            "purpose": 1,
+            "status": 1,
+            "robots": [],
+            "nodes": [
+                {
+                    "nodeParentCode": "0",
+                    "nodeParentName": "Start",
+                    "nodeParentType": 1,
+                    "nodeCode": "90008",
+                    "nodeName": "90008",
+                    "nodeType": 2,
+                    "priority": 2,
+                    "flowRule": "lang.ark.task.rule.default"
+                }
+            ]
+        },
+        {
+            "workflowName": "HDD-ROT-TEST",
+            "workflowCode": "F000012",
+            "priority": 1,
+            "purpose": 1,
+            "status": 1,
+            "robots": [],
+            "nodes": [
+                {
+                    "nodeParentCode": "0",
+                    "nodeParentName": "Start",
+                    "nodeParentType": 1,
+                    "nodeCode": "90006",
+                    "nodeName": "90006",
+                    "nodeType": 2,
+                    "priority": 2,
+                    "flowRule": "lang.ark.task.rule.default"
+                }
+            ]
+        },
+        {
+            "workflowName": "PACK >>> PP_HDD",
+            "workflowCode": "F202601120000001",
+            "priority": 1,
+            "purpose": 1,
+            "status": 1,
+            "robots": [],
+            "nodes": [
+                {
+                    "nodeParentCode": "0",
+                    "nodeParentName": "Start",
+                    "nodeParentType": 1,
+                    "nodeCode": "90001",
+                    "nodeName": "90000",
+                    "nodeType": 2,
+                    "priority": 2,
+                    "flowRule": "lang.ark.task.rule.default"
+                }
+            ]
+        },
+        {
+            "workflowName": "LIFT >>> PP_HDD",
+            "workflowCode": "F202601120000003",
+            "priority": 1,
+            "purpose": 1,
+            "status": 1,
+            "robots": [],
+            "nodes": [
+                {
+                    "nodeParentCode": "0",
+                    "nodeParentName": "Start",
+                    "nodeParentType": 1,
+                    "nodeCode": "90005",
+                    "nodeName": "90000",
+                    "nodeType": 2,
+                    "priority": 2,
+                    "flowRule": "lang.ark.task.rule.default"
+                }
+            ]
+        },
+        {
+            "workflowName": "PP_HDD >>> PACK",
+            "workflowCode": "F202601120000004",
+            "priority": 1,
+            "purpose": 1,
+            "status": 1,
+            "robots": [],
+            "nodes": [
+                {
+                    "nodeParentCode": "0",
+                    "nodeParentName": "Start",
+                    "nodeParentType": 1,
+                    "nodeCode": "90006",
+                    "nodeName": "90001",
+                    "nodeType": 2,
+                    "priority": 2,
+                    "flowRule": "lang.ark.task.rule.default"
+                }
+            ]
+        },
+        {
+            "workflowName": "PP_HDD >>> LIFT",
+            "workflowCode": "F202601120000005",
+            "priority": 1,
+            "purpose": 1,
+            "status": 1,
+            "robots": [],
+            "nodes": [
+                {
+                    "nodeParentCode": "0",
+                    "nodeParentName": "Start",
+                    "nodeParentType": 1,
+                    "nodeCode": "90006",
+                    "nodeName": "90001",
+                    "nodeType": 2,
+                    "priority": 2,
+                    "flowRule": "lang.ark.task.rule.default"
+                }
+            ]
+        }
+    ]
+}
+
+{
+    "header": {
+        "responseId": "d278ddee-c7b0-4ae8-aede-1cbac547c50a",
+        "msgType": "StationListMsg",
+        "code": "0",
+        "requestTime": null,
+        "clientCode": null,
+        "msg": "Successful invocation"
+    },
+    "body": [
+        {
+            "stationName": "B3F1_OUT",
+            "stationCode": "B3F1_OUT",
+            "locations": [
+                {
+                    "locationCode": "B3F1_2_OUT",
+                    "containerCode": "00000048"
+                },
+                {
+                    "locationCode": "B3F1_1_OUT",
+                    "containerCode": null
+                }
+            ]
+        },
+        {
+            "stationName": "PACK",
+            "stationCode": "PACK",
+            "locations": [
+                {
+                    "locationCode": "PACKING_1",
+                    "containerCode": "00000051"
+                },
+                {
+                    "locationCode": "PACKING_2",
+                    "containerCode": "00000049"
+                }
+            ]
+        },
+        {
+            "stationName": "B4F1",
+            "stationCode": "B4F1",
+            "locations": [
+                {
+                    "locationCode": "100000040",
+                    "containerCode": null
+                },
+                {
+                    "locationCode": "200000059",
+                    "containerCode": null
+                }
+            ]
+        },
+        {
+            "stationName": "B3F1_IN",
+            "stationCode": "B3F1_IN",
+            "locations": [
+                {
+                    "locationCode": "B3F1_1_IN",
+                    "containerCode": null
+                },
+                {
+                    "locationCode": "B3F1_2_IN",
+                    "containerCode": null
+                }
+            ]
+        },
+        {
+            "stationName": "ELEVATOR",
+            "stationCode": "ELEVATOR",
+            "locations": [
+                {
+                    "locationCode": "ELEVATOR",
+                    "containerCode": "00000016"
+                }
+            ]
+        },
+        {
+            "stationName": "PP_HDD",
+            "stationCode": "PP_HDD",
+            "locations": [
+                {
+                    "locationCode": "PP_HDD",
+                    "containerCode": null
+                }
+            ]
+        },
+        {
+            "stationName": "ROT",
+            "stationCode": "ROT",
+            "locations": [
+                {
+                    "locationCode": "ROT",
+                    "containerCode": null
+                }
+            ]
+        },
+        {
+            "stationName": "TEST",
+            "stationCode": "TEST",
+            "locations": [
+                {
+                    "locationCode": "100000033",
+                    "containerCode": null
+                }
+            ]
+        }
+    ]
+}
+
+{
+    "header": {
+        "responseId": "5314b432-7c6f-4ca8-b0bc-92962664d3a5",
+        "msgType": "WorkflowInstanceListMsg",
+        "code": "0",
+        "requestTime": null,
+        "clientCode": null,
+        "msg": "Successful invocation"
+    },
+    "body": [
+        {
+            "workflowName": "B3F1 >>> LIFT",
+            "workflowCode": "F202512240000001",
+            "instanceId": 24,
+            "taskId": 47,
+            "taskCode": "",
+            "instancePriority": 1,
+            "instanceStatus": 31,
+            "nodeCode": null,
+            "nodeName": null,
+            "locationFrom": "-1",
+            "locationTo": "100000014",
+            "containerCode": "00000005",
+            "robot": "3855010",
+            "startTime": "2025-12-24 14:42:16",
+            "taskStatus": 30,
+            "robotStatus": "ARRIVED",
+            "robotError": null,
+            "exceptionState": "MANUAL_FORCE_COMPLETED",
+            "exceptionFailReason": null
+        },
+        {
+            "workflowName": "B3F1 >>> LIFT",
+            "workflowCode": "F202512240000001",
+            "instanceId": 24,
+            "taskId": 48,
+            "taskCode": "",
+            "instancePriority": 1,
+            "instanceStatus": 31,
+            "nodeCode": null,
+            "nodeName": null,
+            "locationFrom": "100000014",
+            "locationTo": "100000040",
+            "containerCode": "00000005",
+            "robot": "3855010",
+            "startTime": "2025-12-24 14:42:16",
+            "taskStatus": 31,
+            "robotStatus": "ARRIVED_WAIT_POINT",
+            "robotError": null,
+            "exceptionState": "MANUAL_FORCE_COMPLETED",
+            "exceptionFailReason": null
+        },
+        {
+            "workflowName": "B3F1 >>> LIFT",
+            "workflowCode": "F202512240000001",
+            "instanceId": 25,
+            "taskId": 49,
+            "taskCode": "",
+            "instancePriority": 1,
+            "instanceStatus": 30,
+            "nodeCode": null,
+            "nodeName": null,
+            "locationFrom": "-1",
+            "locationTo": "100000014",
+            "containerCode": "20000004",
+            "robot": "3855010",
+            "startTime": "2025-12-25 16:06:37",
+            "taskStatus": 30,
+            "robotStatus": "ARRIVED",
+            "robotError": null,
+            "exceptionState": null,
+            "exceptionFailReason": null
+        },
+        {
+            "workflowName": "B3F1 >>> LIFT",
+            "workflowCode": "F202512240000001",
+            "instanceId": 25,
+            "taskId": 50,
+            "taskCode": "",
+            "instancePriority": 1,
+            "instanceStatus": 30,
+            "nodeCode": null,
+            "nodeName": null,
+            "locationFrom": "100000014",
+            "locationTo": "100000040",
+            "containerCode": "20000004",
+            "robot": "3855010",
+            "startTime": "2025-12-25 16:06:37",
+            "taskStatus": 30,
+            "robotStatus": "SHELF_ARRIVED",
+            "robotError": null,
+            "exceptionState": null,
+            "exceptionFailReason": null
+        },
+        {
+            "workflowName": "B4F1_TO_PACK",
+            "workflowCode": "F202512240000005",
+            "instanceId": 26,
+            "taskId": 51,
+            "taskCode": "",
+            "instancePriority": 1,
+            "instanceStatus": 30,
+            "nodeCode": null,
+            "nodeName": null,
+            "locationFrom": "-1",
+            "locationTo": "100000040",
+            "containerCode": "20000004",
+            "robot": "3855010",
+            "startTime": "2025-12-25 16:13:02",
+            "taskStatus": 30,
+            "robotStatus": "ARRIVED",
+            "robotError": null,
+            "exceptionState": null,
+            "exceptionFailReason": null
+        },
+        {
+            "workflowName": "B4F1_TO_PACK",
+            "workflowCode": "F202512240000005",
+            "instanceId": 26,
+            "taskId": 52,
+            "taskCode": "",
+            "instancePriority": 1,
+            "instanceStatus": 30,
+            "nodeCode": null,
+            "nodeName": null,
+            "locationFrom": "100000040",
+            "locationTo": "200000044",
+            "containerCode": "20000004",
+            "robot": "3855010",
+            "startTime": "2025-12-25 16:13:02",
+            "taskStatus": 30,
+            "robotStatus": "SHELF_ARRIVED",
+            "robotError": null,
+            "exceptionState": null,
+            "exceptionFailReason": null
+        },
+        {
+            "workflowName": "PACK >>> B3F1",
+            "workflowCode": "F202512240000006",
+            "instanceId": 27,
+            "taskId": 53,
+            "taskCode": "",
+            "instancePriority": 1,
+            "instanceStatus": 30,
+            "nodeCode": null,
+            "nodeName": null,
+            "locationFrom": "-1",
+            "locationTo": "200000044",
+            "containerCode": "20000004",
+            "robot": "3855010",
+            "startTime": "2025-12-25 16:16:10",
+            "taskStatus": 30,
+            "robotStatus": "ARRIVED",
+            "robotError": null,
+            "exceptionState": null,
+            "exceptionFailReason": null
+        },
+        {
+            "workflowName": "PACK >>> B3F1",
+            "workflowCode": "F202512240000006",
+            "instanceId": 27,
+            "taskId": 54,
+            "taskCode": "",
+            "instancePriority": 1,
+            "instanceStatus": 30,
+            "nodeCode": null,
+            "nodeName": null,
+            "locationFrom": "200000044",
+            "locationTo": "200000050",
+            "containerCode": "20000004",
+            "robot": "3855010",
+            "startTime": "2025-12-25 16:16:10",
+            "taskStatus": 30,
+            "robotStatus": "SHELF_ARRIVED",
+            "robotError": null,
+            "exceptionState": null,
+            "exceptionFailReason": null
+        },
+        {
+            "workflowName": "B3F1 >>> LIFT",
+            "workflowCode": "F202512240000001",
+            "instanceId": 28,
+            "taskId": 55,
+            "taskCode": "",
+            "instancePriority": 1,
+            "instanceStatus": 30,
+            "nodeCode": null,
+            "nodeName": null,
+            "locationFrom": "-1",
+            "locationTo": "100000014",
+            "containerCode": "20000004",
+            "robot": "3855010",
+            "startTime": "2025-12-25 16:21:36",
+            "taskStatus": 30,
+            "robotStatus": "ARRIVED",
+            "robotError": null,
+            "exceptionState": null,
+            "exceptionFailReason": null
+        },
+        {
+            "workflowName": "B3F1 >>> LIFT",
+            "workflowCode": "F202512240000001",
+            "instanceId": 28,
+            "taskId": 56,
+            "taskCode": "",
+            "instancePriority": 1,
+            "instanceStatus": 30,
+            "nodeCode": null,
+            "nodeName": null,
+            "locationFrom": "100000014",
+            "locationTo": "100000040",
+            "containerCode": "20000004",
+            "robot": "3855010",
+            "startTime": "2025-12-25 16:21:36",
+            "taskStatus": 30,
+            "robotStatus": "SHELF_ARRIVED",
+            "robotError": null,
+            "exceptionState": null,
+            "exceptionFailReason": null
+        },
+        {
+            "workflowName": "B4F1_TO_B3F1",
+            "workflowCode": "F202512240000004",
+            "instanceId": 29,
+            "taskId": 57,
+            "taskCode": "",
+            "instancePriority": 1,
+            "instanceStatus": 30,
+            "nodeCode": null,
+            "nodeName": null,
+            "locationFrom": "-1",
+            "locationTo": "100000040",
+            "containerCode": "20000004",
+            "robot": "3855010",
+            "startTime": "2025-12-25 16:25:54",
+            "taskStatus": 30,
+            "robotStatus": "ARRIVED",
+            "robotError": null,
+            "exceptionState": null,
+            "exceptionFailReason": null
+        }
+    ]
+}
+
+{
+    "header": {
+        "responseId": "e6878a44-b196-4e6f-ba23-8c4c1576b193",
+        "msgType": "ContainerListMsg",
+        "code": "0",
+        "requestTime": null,
+        "clientCode": null,
+        "msg": "Successful invocation"
+    },
+    "body": [
+        {
+            "containerCode": "00000016",
+            "containerCategory": "T0000006",
+            "locationCode": "ELEVATOR",
+            "areaCode": "",
+            "stationCode": "ELEVATOR",
+            "status": 1,
+            "taskCode": null
+        },
+        {
+            "containerCode": "00000038",
+            "containerCategory": "T2000001",
+            "locationCode": "",
+            "areaCode": "",
+            "stationCode": null,
+            "status": 0,
+            "taskCode": null
+        },
+        {
+            "containerCode": "00000041",
+            "containerCategory": "T2000001",
+            "locationCode": "",
+            "areaCode": "",
+            "stationCode": null,
+            "status": 0,
+            "taskCode": null
+        },
+        {
+            "containerCode": "00000048",
+            "containerCategory": "T2000001",
+            "locationCode": "B3F1_2_OUT",
+            "areaCode": "",
+            "stationCode": "B3F1_OUT",
+            "status": 1,
+            "taskCode": null
+        },
+        {
+            "containerCode": "00000049",
+            "containerCategory": "T2000001",
+            "locationCode": "PACKING_2",
+            "areaCode": "",
+            "stationCode": "PACK",
+            "status": 1,
+            "taskCode": null
+        },
+        {
+            "containerCode": "00000050",
+            "containerCategory": "T2000001",
+            "locationCode": "",
+            "areaCode": "",
+            "stationCode": null,
+            "status": 0,
+            "taskCode": null
+        },
+        {
+            "containerCode": "00000051",
+            "containerCategory": "T2000001",
+            "locationCode": "PACKING_1",
+            "areaCode": "",
+            "stationCode": "PACK",
+            "status": 1,
+            "taskCode": null
+        },
+        {
+            "containerCode": "00000052",
+            "containerCategory": "T2000001",
+            "locationCode": null,
+            "areaCode": "",
+            "stationCode": null,
+            "status": 0,
+            "taskCode": null
+        },
+        {
+            "containerCode": "00000053",
+            "containerCategory": "T2000001",
+            "locationCode": null,
+            "areaCode": "",
+            "stationCode": null,
+            "status": 0,
+            "taskCode": null
+        }
+    ]
+}
+
+{
+    "header": {
+        "responseId": "d6841ea4-128d-4303-bab6-b66246602510",
+        "msgType": "AreaListMsg",
+        "code": "0",
+        "requestTime": null,
+        "clientCode": null,
+        "msg": "Successful invocation"
+    },
+    "body": [
+        {
+            "areaName": "区域80000",
+            "areaCode": "A02",
+            "functionParams": [
+                {
+                    "queuingStrategy": "1",
+                    "functionType": "QUEUING",
+                    "progressiveStrategy": "1"
+                }
+            ],
+            "areaApexes": {
+                "mapId": "null",
+                "floorId": "null",
+                "controlPoints": []
+            },
+            "locations": [
+                {
+                    "locationCode": "PP_HDD",
+                    "containerCode": null
+                }
+            ]
+        }
+    ]
+}
+
+{
+    "header": {
+        "responseId": "cc8ae023-0606-4cd6-a042-f5b4c8c4da0b",
+        "msgType": "LocationListMsg",
+        "code": "0",
+        "requestTime": null,
+        "clientCode": null,
+        "msg": "Successful invocation"
+    },
+    "body": [
+        {
+            "locationCode": "000000001",
+            "location": {
+                "x": 48.5,
+                "y": 18.8,
+                "z": 1.0
+            },
+            "index": null,
+            "hostCellCode": "01",
+            "locationType": "OMNI_DIR_CELL",
+            "locationTaskStatus": 0,
+            "locationRobotStatus": "0",
+            "locationContainerStatus": 0,
+            "length": 0.75,
+            "width": 0.75,
+            "allocatedRobot": null,
+            "occupyRobot": null,
+            "allocatedContainerCode": null,
+            "occupyContainerCode": null,
+            "chargerId": null,
+            "locationFunctions": [
+                "RESTART_CELL",
+                "REST_CELL"
+            ]
+        },
+        {
+            "locationCode": "000000007",
+            "location": {
+                "x": 38.0,
+                "y": 18.4,
+                "z": 1.0
+            },
+            "index": null,
+            "hostCellCode": null,
+            "locationType": "OMNI_DIR_CELL",
+            "locationTaskStatus": 0,
+            "locationRobotStatus": "0",
+            "locationContainerStatus": 0,
+            "length": 1.0,
+            "width": 1.0,
+            "allocatedRobot": null,
+            "occupyRobot": null,
+            "allocatedContainerCode": null,
+            "occupyContainerCode": null,
+            "chargerId": null,
+            "locationFunctions": [
+                "LIMITTED_TURN_CELL"
+            ]
+        },
+        {
+            "locationCode": "000000009",
+            "location": {
+                "x": 35.5,
+                "y": 18.4,
+                "z": 1.0
+            },
+            "index": null,
+            "hostCellCode": null,
+            "locationType": "OMNI_DIR_CELL",
+            "locationTaskStatus": 0,
+            "locationRobotStatus": "0",
+            "locationContainerStatus": 0,
+            "length": 1.0,
+            "width": 1.0,
+            "allocatedRobot": null,
+            "occupyRobot": null,
+            "allocatedContainerCode": null,
+            "occupyContainerCode": null,
+            "chargerId": null,
+            "locationFunctions": null
+        },
+        {
+            "locationCode": "200000001",
+            "location": {
+                "x": 44.6,
+                "y": 17.141,
+                "z": 1.0
+            },
+            "index": null,
+            "hostCellCode": null,
+            "locationType": "OMNI_DIR_CELL",
+            "locationTaskStatus": 0,
+            "locationRobotStatus": "0",
+            "locationContainerStatus": 0,
+            "length": 0.75,
+            "width": 0.75,
+            "allocatedRobot": null,
+            "occupyRobot": null,
+            "allocatedContainerCode": null,
+            "occupyContainerCode": null,
+            "chargerId": null,
+            "locationFunctions": [
+                "NOT_ALLOW_TURN_CELL",
+                "RESTART_CELL",
+                "REST_CELL"
+            ]
+        },
+        {
+            "locationCode": "000000012",
+            "location": {
+                "x": 30.5,
+                "y": 18.4,
+                "z": 1.0
+            },
+            "index": null,
+            "hostCellCode": null,
+            "locationType": "OMNI_DIR_CELL",
+            "locationTaskStatus": 0,
+            "locationRobotStatus": "0",
+            "locationContainerStatus": 0,
+            "length": 1.2,
+            "width": 1.2,
+            "allocatedRobot": null,
+            "occupyRobot": null,
+            "allocatedContainerCode": null,
+            "occupyContainerCode": null,
+            "chargerId": null,
+            "locationFunctions": null
+        },
+        {
+            "locationCode": "000000014",
+            "location": {
+                "x": 27.5,
+                "y": 18.4,
+                "z": 1.0
+            },
+            "index": null,
+            "hostCellCode": null,
+            "locationType": "OMNI_DIR_CELL",
+            "locationTaskStatus": 0,
+            "locationRobotStatus": "0",
+            "locationContainerStatus": 0,
+            "length": 1.2,
+            "width": 1.2,
+            "allocatedRobot": null,
+            "occupyRobot": null,
+            "allocatedContainerCode": null,
+            "occupyContainerCode": null,
+            "chargerId": null,
+            "locationFunctions": null
+        },
+        {
+            "locationCode": "000000016",
+            "location": {
+                "x": 24.5,
+                "y": 18.4,
+                "z": 1.0
+            },
+            "index": null,
+            "hostCellCode": null,
+            "locationType": "OMNI_DIR_CELL",
+            "locationTaskStatus": 0,
+            "locationRobotStatus": "0",
+            "locationContainerStatus": 0,
+            "length": 1.2,
+            "width": 1.2,
+            "allocatedRobot": null,
+            "occupyRobot": null,
+            "allocatedContainerCode": null,
+            "occupyContainerCode": null,
+            "chargerId": null,
+            "locationFunctions": null
+        },
+        {
+            "locationCode": "000000018",
+            "location": {
+                "x": 21.5,
+                "y": 18.4,
+                "z": 1.0
+            },
+            "index": null,
+            "hostCellCode": null,
+            "locationType": "OMNI_DIR_CELL",
+            "locationTaskStatus": 0,
+            "locationRobotStatus": "0",
+            "locationContainerStatus": 0,
+            "length": 1.2,
+            "width": 1.2,
+            "allocatedRobot": null,
+            "occupyRobot": null,
+            "allocatedContainerCode": null,
+            "occupyContainerCode": null,
+            "chargerId": null,
+            "locationFunctions": null
+        },
+        {
+            "locationCode": "000000019",
+            "location": {
+                "x": 19.9,
+                "y": 18.4,
+                "z": 1.0
+            },
+            "index": null,
+            "hostCellCode": null,
+            "locationType": "OMNI_DIR_CELL",
+            "locationTaskStatus": 0,
+            "locationRobotStatus": "0",
+            "locationContainerStatus": 0,
+            "length": 1.2,
+            "width": 1.2,
+            "allocatedRobot": null,
+            "occupyRobot": null,
+            "allocatedContainerCode": null,
+            "occupyContainerCode": null,
+            "chargerId": null,
+            "locationFunctions": [
+                "BACKUP_CELL"
+            ]
+        },
+        {
+            "locationCode": "000000020",
+            "location": {
+                "x": 18.5,
+                "y": 18.4,
+                "z": 1.0
+            },
+            "index": null,
+            "hostCellCode": null,
+            "locationType": "OMNI_DIR_CELL",
+            "locationTaskStatus": 0,
+            "locationRobotStatus": "0",
+            "locationContainerStatus": 0,
+            "length": 1.2,
+            "width": 1.2,
+            "allocatedRobot": null,
+            "occupyRobot": null,
+            "allocatedContainerCode": null,
+            "occupyContainerCode": null,
+            "chargerId": null,
+            "locationFunctions": null
+        },
+        {
+            "locationCode": "000000021",
+            "location": {
+                "x": 17.0,
+                "y": 18.4,
+                "z": 1.0
+            },
+            "index": null,
+            "hostCellCode": null,
+            "locationType": "OMNI_DIR_CELL",
+            "locationTaskStatus": 0,
+            "locationRobotStatus": "0",
+            "locationContainerStatus": 0,
+            "length": 1.2,
+            "width": 1.2,
+            "allocatedRobot": null,
+            "occupyRobot": null,
+            "allocatedContainerCode": null,
+            "occupyContainerCode": null,
+            "chargerId": null,
+            "locationFunctions": null
+        },
+        {
+            "locationCode": "000000022",
+            "location": {
+                "x": 9.0,
+                "y": 18.4,
+                "z": 1.0
+            },
+            "index": null,
+            "hostCellCode": "WAIT_B3F1_OPN",
+            "locationType": "OMNI_DIR_CELL",
+            "locationTaskStatus": 0,
+            "locationRobotStatus": "0",
+            "locationContainerStatus": 0,
+            "length": 1.0,
+            "width": 1.0,
+            "allocatedRobot": null,
+            "occupyRobot": null,
+            "allocatedContainerCode": null,
+            "occupyContainerCode": null,
+            "chargerId": null,
+            "locationFunctions": [
+                "WAIT_CELL"
+            ]
+        },
+        {
+            "locationCode": "000000027",
+            "location": {
+                "x": 9.0,
+                "y": 22.4,
+                "z": 1.0
+            },
+            "index": null,
+            "hostCellCode": null,
+            "locationType": "OMNI_DIR_CELL",
+            "locationTaskStatus": 0,
+            "locationRobotStatus": "0",
+            "locationContainerStatus": 0,
+            "length": 1.2,
+            "width": 1.2,
+            "allocatedRobot": null,
+            "occupyRobot": null,
+            "allocatedContainerCode": null,
+            "occupyContainerCode": null,
+            "chargerId": null,
+            "locationFunctions": null
+        },
+        {
+            "locationCode": "000000029",
+            "location": {
+                "x": 9.0,
+                "y": 25.7,
+                "z": 1.0
+            },
+            "index": null,
+            "hostCellCode": null,
+            "locationType": "OMNI_DIR_CELL",
+            "locationTaskStatus": 0,
+            "locationRobotStatus": "0",
+            "locationContainerStatus": 0,
+            "length": 1.0,
+            "width": 1.0,
+            "allocatedRobot": null,
+            "occupyRobot": null,
+            "allocatedContainerCode": null,
+            "occupyContainerCode": null,
+            "chargerId": null,
+            "locationFunctions": null
+        },
+        {
+            "locationCode": "100000002",
+            "location": {
+                "x": 41.0,
+                "y": 18.4,
+                "z": 1.0
+            },
+            "index": null,
+            "hostCellCode": null,
+            "locationType": "OMNI_DIR_CELL",
+            "locationTaskStatus": 0,
+            "locationRobotStatus": "0",
+            "locationContainerStatus": 0,
+            "length": 1.0,
+            "width": 1.0,
+            "allocatedRobot": null,
+            "occupyRobot": null,
+            "allocatedContainerCode": null,
+            "occupyContainerCode": null,
+            "chargerId": null,
+            "locationFunctions": null
+        },
+        {
+            "locationCode": "100000004",
+            "location": {
+                "x": 43.868,
+                "y": 17.341,
+                "z": 1.0
+            },
+            "index": null,
+            "hostCellCode": null,
+            "locationType": "CHARGER_CELL",
+            "locationTaskStatus": 0,
+            "locationRobotStatus": "0",
+            "locationContainerStatus": 0,
+            "length": 0.75,
+            "width": 0.75,
+            "allocatedRobot": null,
+            "occupyRobot": null,
+            "allocatedContainerCode": null,
+            "occupyContainerCode": null,
+            "chargerId": "1",
+            "locationFunctions": [
+                "NOT_ALLOW_TURN_CELL"
+            ]
+        },
+        {
+            "locationCode": "100000005",
+            "location": {
+                "x": 42.45,
+                "y": 18.4,
+                "z": 1.0
+            },
+            "index": null,
+            "hostCellCode": null,
+            "locationType": "OMNI_DIR_CELL",
+            "locationTaskStatus": 0,
+            "locationRobotStatus": "0",
+            "locationContainerStatus": 0,
+            "length": 1.0,
+            "width": 1.0,
+            "allocatedRobot": null,
+            "occupyRobot": null,
+            "allocatedContainerCode": null,
+            "occupyContainerCode": null,
+            "chargerId": null,
+            "locationFunctions": null
+        },
+        {
+            "locationCode": "100000007",
+            "location": {
+                "x": 42.45,
+                "y": 17.15,
+                "z": 1.0
+            },
+            "index": null,
+            "hostCellCode": null,
+            "locationType": "OMNI_DIR_CELL",
+            "locationTaskStatus": 0,
+            "locationRobotStatus": "0",
+            "locationContainerStatus": 0,
+            "length": 1.0,
+            "width": 1.0,
+            "allocatedRobot": null,
+            "occupyRobot": null,
+            "allocatedContainerCode": null,
+            "occupyContainerCode": null,
+            "chargerId": null,
+            "locationFunctions": [
+                "BACKUP_CELL"
+            ]
+        },
+        {
+            "locationCode": "100000008",
+            "location": {
+                "x": 42.45,
+                "y": 15.8,
+                "z": 1.0
+            },
+            "index": null,
+            "hostCellCode": null,
+            "locationType": "OMNI_DIR_CELL",
+            "locationTaskStatus": 0,
+            "locationRobotStatus": "0",
+            "locationContainerStatus": 0,
+            "length": 1.0,
+            "width": 1.0,
+            "allocatedRobot": null,
+            "occupyRobot": null,
+            "allocatedContainerCode": null,
+            "occupyContainerCode": null,
+            "chargerId": null,
+            "locationFunctions": null
+        },
+        {
+            "locationCode": "100000009",
+            "location": {
+                "x": 42.45,
+                "y": 14.6,
+                "z": 1.0
+            },
+            "index": null,
+            "hostCellCode": null,
+            "locationType": "OMNI_DIR_CELL",
+            "locationTaskStatus": 0,
+            "locationRobotStatus": "0",
+            "locationContainerStatus": 0,
+            "length": 1.0,
+            "width": 1.0,
+            "allocatedRobot": null,
+            "occupyRobot": null,
+            "allocatedContainerCode": null,
+            "occupyContainerCode": null,
+            "chargerId": null,
+            "locationFunctions": null
+        },
+        {
+            "locationCode": "100000010",
+            "location": {
+                "x": 42.45,
+                "y": 13.5,
+                "z": 1.0
+            },
+            "index": null,
+            "hostCellCode": null,
+            "locationType": "OMNI_DIR_CELL",
+            "locationTaskStatus": 0,
+            "locationRobotStatus": "0",
+            "locationContainerStatus": 0,
+            "length": 1.0,
+            "width": 1.0,
+            "allocatedRobot": null,
+            "occupyRobot": null,
+            "allocatedContainerCode": null,
+            "occupyContainerCode": null,
+            "chargerId": null,
+            "locationFunctions": null
+        },
+        {
+            "locationCode": "100000012",
+            "location": {
+                "x": 42.45,
+                "y": 12.3,
+                "z": 1.0
+            },
+            "index": null,
+            "hostCellCode": null,
+            "locationType": "OMNI_DIR_CELL",
+            "locationTaskStatus": 0,
+            "locationRobotStatus": "0",
+            "locationContainerStatus": 0,
+            "length": 1.0,
+            "width": 1.0,
+            "allocatedRobot": null,
+            "occupyRobot": null,
+            "allocatedContainerCode": null,
+            "occupyContainerCode": null,
+            "chargerId": null,
+            "locationFunctions": null
+        },
+        {
+            "locationCode": "100000013",
+            "location": {
+                "x": 42.45,
+                "y": 11.1,
+                "z": 1.0
+            },
+            "index": null,
+            "hostCellCode": null,
+            "locationType": "OMNI_DIR_CELL",
+            "locationTaskStatus": 0,
+            "locationRobotStatus": "0",
+            "locationContainerStatus": 0,
+            "length": 1.0,
+            "width": 1.0,
+            "allocatedRobot": null,
+            "occupyRobot": null,
+            "allocatedContainerCode": null,
+            "occupyContainerCode": null,
+            "chargerId": null,
+            "locationFunctions": null
+        },
+        {
+            "locationCode": "100000014",
+            "location": {
+                "x": 41.1,
+                "y": 15.8,
+                "z": 1.0
+            },
+            "index": null,
+            "hostCellCode": "B3F1_1_OUT",
+            "locationType": "STATION_CELL",
+            "locationTaskStatus": 0,
+            "locationRobotStatus": "0",
+            "locationContainerStatus": 0,
+            "length": 1.0,
+            "width": 1.0,
+            "allocatedRobot": null,
+            "occupyRobot": null,
+            "allocatedContainerCode": null,
+            "occupyContainerCode": null,
+            "chargerId": null,
+            "locationFunctions": [
+                "BACKUP_CELL"
+            ]
+        },
+        {
+            "locationCode": "100000015",
+            "location": {
+                "x": 41.1,
+                "y": 14.6,
+                "z": 1.0
+            },
+            "index": null,
+            "hostCellCode": "B3F1_2_OUT",
+            "locationType": "STATION_CELL",
+            "locationTaskStatus": 0,
+            "locationRobotStatus": "0",
+            "locationContainerStatus": 2,
+            "length": 1.0,
+            "width": 1.0,
+            "allocatedRobot": null,
+            "occupyRobot": null,
+            "allocatedContainerCode": null,
+            "occupyContainerCode": "00000048",
+            "chargerId": null,
+            "locationFunctions": [
+                "BACKUP_CELL"
+            ]
+        },
+        {
+            "locationCode": "100000018",
+            "location": {
+                "x": 41.1,
+                "y": 11.1,
+                "z": 1.0
+            },
+            "index": null,
+            "hostCellCode": null,
+            "locationType": "OMNI_DIR_CELL",
+            "locationTaskStatus": 0,
+            "locationRobotStatus": "0",
+            "locationContainerStatus": 0,
+            "length": 1.0,
+            "width": 1.0,
+            "allocatedRobot": null,
+            "occupyRobot": null,
+            "allocatedContainerCode": null,
+            "occupyContainerCode": null,
+            "chargerId": null,
+            "locationFunctions": null
+        },
+        {
+            "locationCode": "100000021",
+            "location": {
+                "x": 30.7,
+                "y": 13.2,
+                "z": 1.0
+            },
+            "index": null,
+            "hostCellCode": null,
+            "locationType": "OMNI_DIR_CELL",
+            "locationTaskStatus": 0,
+            "locationRobotStatus": "0",
+            "locationContainerStatus": 0,
+            "length": 1.0,
+            "width": 1.0,
+            "allocatedRobot": null,
+            "occupyRobot": null,
+            "allocatedContainerCode": null,
+            "occupyContainerCode": null,
+            "chargerId": null,
+            "locationFunctions": [
+                "BACKUP_CELL"
+            ]
+        },
+        {
+            "locationCode": "100000022",
+            "location": {
+                "x": 29.2,
+                "y": 13.2,
+                "z": 1.0
+            },
+            "index": null,
+            "hostCellCode": "ELEVATOR",
+            "locationType": "STATION_CELL",
+            "locationTaskStatus": 0,
+            "locationRobotStatus": "0",
+            "locationContainerStatus": 2,
+            "length": 1.0,
+            "width": 1.0,
+            "allocatedRobot": null,
+            "occupyRobot": null,
+            "allocatedContainerCode": null,
+            "occupyContainerCode": "00000016",
+            "chargerId": null,
+            "locationFunctions": [
+                "BACKUP_CELL"
+            ]
+        },
+        {
+            "locationCode": "100000023",
+            "location": {
+                "x": 30.099,
+                "y": 11.155,
+                "z": 1.0
+            },
+            "index": null,
+            "hostCellCode": null,
+            "locationType": "OMNI_DIR_CELL",
+            "locationTaskStatus": 0,
+            "locationRobotStatus": "0",
+            "locationContainerStatus": 0,
+            "length": 1.0,
+            "width": 1.0,
+            "allocatedRobot": null,
+            "occupyRobot": null,
+            "allocatedContainerCode": null,
+            "occupyContainerCode": null,
+            "chargerId": null,
+            "locationFunctions": [
+                "NOT_ALLOW_TURN_CELL"
+            ]
+        },
+        {
+            "locationCode": "100000024",
+            "location": {
+                "x": 30.08,
+                "y": 9.655,
+                "z": 1.0
+            },
+            "index": null,
+            "hostCellCode": null,
+            "locationType": "OMNI_DIR_CELL",
+            "locationTaskStatus": 0,
+            "locationRobotStatus": "0",
+            "locationContainerStatus": 0,
+            "length": 1.0,
+            "width": 1.0,
+            "allocatedRobot": null,
+            "occupyRobot": null,
+            "allocatedContainerCode": null,
+            "occupyContainerCode": null,
+            "chargerId": null,
+            "locationFunctions": [
+                "RESTART_CELL"
+            ]
+        },
+        {
+            "locationCode": "100000025",
+            "location": {
+                "x": 30.7,
+                "y": 15.155,
+                "z": 1.0
+            },
+            "index": null,
+            "hostCellCode": null,
+            "locationType": "OMNI_DIR_CELL",
+            "locationTaskStatus": 0,
+            "locationRobotStatus": "0",
+            "locationContainerStatus": 0,
+            "length": 1.0,
+            "width": 1.0,
+            "allocatedRobot": null,
+            "occupyRobot": null,
+            "allocatedContainerCode": null,
+            "occupyContainerCode": null,
+            "chargerId": null,
+            "locationFunctions": null
+        },
+        {
+            "locationCode": "100000028",
+            "location": {
+                "x": 9.0,
+                "y": 20.4,
+                "z": 1.0
+            },
+            "index": null,
+            "hostCellCode": "WAIT_B4F1_OPN",
+            "locationType": "OMNI_DIR_CELL",
+            "locationTaskStatus": 0,
+            "locationRobotStatus": "0",
+            "locationContainerStatus": 0,
+            "length": 1.0,
+            "width": 1.0,
+            "allocatedRobot": null,
+            "occupyRobot": null,
+            "allocatedContainerCode": null,
+            "occupyContainerCode": null,
+            "chargerId": null,
+            "locationFunctions": [
+                "WAIT_CELL"
+            ]
+        },
+        {
+            "locationCode": "100000029",
+            "location": {
+                "x": 9.0,
+                "y": 29.7,
+                "z": 1.0
+            },
+            "index": null,
+            "hostCellCode": null,
+            "locationType": "OMNI_DIR_CELL",
+            "locationTaskStatus": 0,
+            "locationRobotStatus": "0",
+            "locationContainerStatus": 0,
+            "length": 1.0,
+            "width": 1.0,
+            "allocatedRobot": null,
+            "occupyRobot": null,
+            "allocatedContainerCode": null,
+            "occupyContainerCode": null,
+            "chargerId": null,
+            "locationFunctions": null
+        },
+        {
+            "locationCode": "100000031",
+            "location": {
+                "x": 9.0,
+                "y": 33.7,
+                "z": 1.0
+            },
+            "index": null,
+            "hostCellCode": null,
+            "locationType": "OMNI_DIR_CELL",
+            "locationTaskStatus": 0,
+            "locationRobotStatus": "0",
+            "locationContainerStatus": 0,
+            "length": 1.0,
+            "width": 1.0,
+            "allocatedRobot": null,
+            "occupyRobot": null,
+            "allocatedContainerCode": null,
+            "occupyContainerCode": null,
+            "chargerId": null,
+            "locationFunctions": [
+                "BACKUP_CELL"
+            ]
+        },
+        {
+            "locationCode": "100000033",
+            "location": {
+                "x": 9.0,
+                "y": 37.7,
+                "z": 1.0
+            },
+            "index": null,
+            "hostCellCode": null,
+            "locationType": "OMNI_DIR_CELL",
+            "locationTaskStatus": 0,
+            "locationRobotStatus": "0",
+            "locationContainerStatus": 0,
+            "length": 1.0,
+            "width": 1.0,
+            "allocatedRobot": null,
+            "occupyRobot": null,
+            "allocatedContainerCode": null,
+            "occupyContainerCode": null,
+            "chargerId": null,
+            "locationFunctions": null
+        },
+        {
+            "locationCode": "100000034",
+            "location": {
+                "x": 9.0,
+                "y": 39.7,
+                "z": 1.0
+            },
+            "index": null,
+            "hostCellCode": null,
+            "locationType": "OMNI_DIR_CELL",
+            "locationTaskStatus": 0,
+            "locationRobotStatus": "0",
+            "locationContainerStatus": 0,
+            "length": 1.0,
+            "width": 1.0,
+            "allocatedRobot": null,
+            "occupyRobot": null,
+            "allocatedContainerCode": null,
+            "occupyContainerCode": null,
+            "chargerId": null,
+            "locationFunctions": null
+        },
+        {
+            "locationCode": "100000035",
+            "location": {
+                "x": 9.0,
+                "y": 42.0,
+                "z": 1.0
+            },
+            "index": null,
+            "hostCellCode": null,
+            "locationType": "OMNI_DIR_CELL",
+            "locationTaskStatus": 0,
+            "locationRobotStatus": "0",
+            "locationContainerStatus": 0,
+            "length": 1.0,
+            "width": 1.0,
+            "allocatedRobot": null,
+            "occupyRobot": null,
+            "allocatedContainerCode": null,
+            "occupyContainerCode": null,
+            "chargerId": null,
+            "locationFunctions": [
+                "BACKUP_CELL"
+            ]
+        },
+        {
+            "locationCode": "100000038",
+            "location": {
+                "x": 8.67,
+                "y": 47.7,
+                "z": 1.0
+            },
+            "index": null,
+            "hostCellCode": null,
+            "locationType": "OMNI_DIR_CELL",
+            "locationTaskStatus": 0,
+            "locationRobotStatus": "0",
+            "locationContainerStatus": 0,
+            "length": 1.0,
+            "width": 1.0,
+            "allocatedRobot": null,
+            "occupyRobot": null,
+            "allocatedContainerCode": null,
+            "occupyContainerCode": null,
+            "chargerId": null,
+            "locationFunctions": [
+                "BACKUP_CELL"
+            ]
+        },
+        {
+            "locationCode": "100000039",
+            "location": {
+                "x": 8.67,
+                "y": 49.7,
+                "z": 1.0
+            },
+            "index": null,
+            "hostCellCode": "ROT",
+            "locationType": "OMNI_DIR_CELL",
+            "locationTaskStatus": 0,
+            "locationRobotStatus": "0",
+            "locationContainerStatus": 0,
+            "length": 1.0,
+            "width": 1.0,
+            "allocatedRobot": null,
+            "occupyRobot": null,
+            "allocatedContainerCode": null,
+            "occupyContainerCode": null,
+            "chargerId": null,
+            "locationFunctions": [
+                "QUEUE_CELL"
+            ]
+        },
+        {
+            "locationCode": "100000040",
+            "location": {
+                "x": 10.33,
+                "y": 53.0,
+                "z": 1.0
+            },
+            "index": null,
+            "hostCellCode": "100000040",
+            "locationType": "STATION_CELL",
+            "locationTaskStatus": 0,
+            "locationRobotStatus": "0",
+            "locationContainerStatus": 0,
+            "length": 1.0,
+            "width": 1.0,
+            "allocatedRobot": null,
+            "occupyRobot": null,
+            "allocatedContainerCode": null,
+            "occupyContainerCode": null,
+            "chargerId": null,
+            "locationFunctions": [
+                "BACKUP_CELL"
+            ]
+        },
+        {
+            "locationCode": "100000041",
+            "location": {
+                "x": 8.67,
+                "y": 53.0,
+                "z": 1.0
+            },
+            "index": null,
+            "hostCellCode": "HDD_CLS",
+            "locationType": "OMNI_DIR_CELL",
+            "locationTaskStatus": 0,
+            "locationRobotStatus": "0",
+            "locationContainerStatus": 0,
+            "length": 1.0,
+            "width": 1.0,
+            "allocatedRobot": null,
+            "occupyRobot": null,
+            "allocatedContainerCode": null,
+            "occupyContainerCode": null,
+            "chargerId": null,
+            "locationFunctions": [
+                "BACKUP_CELL",
+                "WAIT_CELL"
+            ]
+        },
+        {
+            "locationCode": "100000042",
+            "location": {
+                "x": 8.67,
+                "y": 55.5,
+                "z": 1.0
+            },
+            "index": null,
+            "hostCellCode": "PP_HDD",
+            "locationType": "STATION_CELL",
+            "locationTaskStatus": 0,
+            "locationRobotStatus": "0",
+            "locationContainerStatus": 0,
+            "length": 1.0,
+            "width": 1.0,
+            "allocatedRobot": null,
+            "occupyRobot": null,
+            "allocatedContainerCode": null,
+            "occupyContainerCode": null,
+            "chargerId": null,
+            "locationFunctions": [
+                "NOT_ALLOW_TURN_CELL"
+            ]
+        },
+        {
+            "locationCode": "200000002",
+            "location": {
+                "x": 45.34,
+                "y": 17.355,
+                "z": 1.0
+            },
+            "index": null,
+            "hostCellCode": null,
+            "locationType": "CHARGER_CELL",
+            "locationTaskStatus": 0,
+            "locationRobotStatus": "2",
+            "locationContainerStatus": 0,
+            "length": 0.75,
+            "width": 0.75,
+            "allocatedRobot": null,
+            "occupyRobot": 3855010,
+            "allocatedContainerCode": null,
+            "occupyContainerCode": null,
+            "chargerId": "2",
+            "locationFunctions": [
+                "NOT_ALLOW_TURN_CELL"
+            ]
+        },
+        {
+            "locationCode": "200000005",
+            "location": {
+                "x": 14.0,
+                "y": 18.4,
+                "z": 1.0
+            },
+            "index": null,
+            "hostCellCode": null,
+            "locationType": "OMNI_DIR_CELL",
+            "locationTaskStatus": 0,
+            "locationRobotStatus": "0",
+            "locationContainerStatus": 0,
+            "length": 1.2,
+            "width": 1.2,
+            "allocatedRobot": null,
+            "occupyRobot": null,
+            "allocatedContainerCode": null,
+            "occupyContainerCode": null,
+            "chargerId": null,
+            "locationFunctions": null
+        },
+        {
+            "locationCode": "200000007",
+            "location": {
+                "x": 11.0,
+                "y": 18.4,
+                "z": 1.0
+            },
+            "index": null,
+            "hostCellCode": null,
+            "locationType": "OMNI_DIR_CELL",
+            "locationTaskStatus": 0,
+            "locationRobotStatus": "0",
+            "locationContainerStatus": 0,
+            "length": 1.2,
+            "width": 1.2,
+            "allocatedRobot": null,
+            "occupyRobot": null,
+            "allocatedContainerCode": null,
+            "occupyContainerCode": null,
+            "chargerId": null,
+            "locationFunctions": null
+        },
+        {
+            "locationCode": "200000008",
+            "location": {
+                "x": 46.2,
+                "y": 18.7,
+                "z": 1.0
+            },
+            "index": null,
+            "hostCellCode": "",
+            "locationType": "OMNI_DIR_CELL",
+            "locationTaskStatus": 0,
+            "locationRobotStatus": "0",
+            "locationContainerStatus": 0,
+            "length": 0.75,
+            "width": 0.75,
+            "allocatedRobot": null,
+            "occupyRobot": null,
+            "allocatedContainerCode": null,
+            "occupyContainerCode": null,
+            "chargerId": null,
+            "locationFunctions": [
+                "BACKUP_CELL"
+            ]
+        },
+        {
+            "locationCode": "200000009",
+            "location": {
+                "x": 44.6,
+                "y": 18.7,
+                "z": 1.0
+            },
+            "index": null,
+            "hostCellCode": null,
+            "locationType": "OMNI_DIR_CELL",
+            "locationTaskStatus": 0,
+            "locationRobotStatus": "0",
+            "locationContainerStatus": 0,
+            "length": 0.75,
+            "width": 0.75,
+            "allocatedRobot": null,
+            "occupyRobot": null,
+            "allocatedContainerCode": null,
+            "occupyContainerCode": null,
+            "chargerId": null,
+            "locationFunctions": [
+                "BACKUP_CELL"
+            ]
+        },
+        {
+            "locationCode": "200000044",
+            "location": {
+                "x": 17.0,
+                "y": 16.75,
+                "z": 1.0
+            },
+            "index": null,
+            "hostCellCode": "PACKING_1",
+            "locationType": "STATION_CELL",
+            "locationTaskStatus": 0,
+            "locationRobotStatus": "0",
+            "locationContainerStatus": 2,
+            "length": 1.2,
+            "width": 1.2,
+            "allocatedRobot": null,
+            "occupyRobot": null,
+            "allocatedContainerCode": null,
+            "occupyContainerCode": "00000051",
+            "chargerId": null,
+            "locationFunctions": [
+                "BACKUP_CELL",
+                "NOT_ALLOW_TURN_CELL"
+            ]
+        },
+        {
+            "locationCode": "200000050",
+            "location": {
+                "x": 43.65,
+                "y": 15.8,
+                "z": 1.0
+            },
+            "index": null,
+            "hostCellCode": "B3F1_1_IN",
+            "locationType": "STATION_CELL",
+            "locationTaskStatus": 0,
+            "locationRobotStatus": "0",
+            "locationContainerStatus": 0,
+            "length": 1.0,
+            "width": 1.0,
+            "allocatedRobot": null,
+            "occupyRobot": null,
+            "allocatedContainerCode": null,
+            "occupyContainerCode": null,
+            "chargerId": null,
+            "locationFunctions": [
+                "NOT_ALLOW_TURN_CELL"
+            ]
+        },
+        {
+            "locationCode": "200000051",
+            "location": {
+                "x": 43.65,
+                "y": 14.6,
+                "z": 1.0
+            },
+            "index": null,
+            "hostCellCode": "B3F1_2_IN",
+            "locationType": "STATION_CELL",
+            "locationTaskStatus": 0,
+            "locationRobotStatus": "0",
+            "locationContainerStatus": 0,
+            "length": 1.0,
+            "width": 1.0,
+            "allocatedRobot": null,
+            "occupyRobot": null,
+            "allocatedContainerCode": null,
+            "occupyContainerCode": null,
+            "chargerId": null,
+            "locationFunctions": [
+                "NOT_ALLOW_TURN_CELL"
+            ]
+        },
+        {
+            "locationCode": "200000058",
+            "location": {
+                "x": 8.67,
+                "y": 51.7,
+                "z": 1.0
+            },
+            "index": null,
+            "hostCellCode": "HDD_OPN",
+            "locationType": "OMNI_DIR_CELL",
+            "locationTaskStatus": 0,
+            "locationRobotStatus": "0",
+            "locationContainerStatus": 0,
+            "length": 1.0,
+            "width": 1.0,
+            "allocatedRobot": null,
+            "occupyRobot": null,
+            "allocatedContainerCode": null,
+            "occupyContainerCode": null,
+            "chargerId": null,
+            "locationFunctions": [
+                "WAIT_CELL"
+            ]
+        },
+        {
+            "locationCode": "200000059",
+            "location": {
+                "x": 7.615,
+                "y": 53.0,
+                "z": 1.0
+            },
+            "index": null,
+            "hostCellCode": "200000059",
+            "locationType": "STATION_CELL",
+            "locationTaskStatus": 0,
+            "locationRobotStatus": "0",
+            "locationContainerStatus": 0,
+            "length": 1.0,
+            "width": 1.0,
+            "allocatedRobot": null,
+            "occupyRobot": null,
+            "allocatedContainerCode": null,
+            "occupyContainerCode": null,
+            "chargerId": null,
+            "locationFunctions": [
+                "BACKUP_CELL"
+            ]
+        },
+        {
+            "locationCode": "200000062",
+            "location": {
+                "x": 18.5,
+                "y": 16.75,
+                "z": 1.0
+            },
+            "index": null,
+            "hostCellCode": "PACKING_2",
+            "locationType": "STATION_CELL",
+            "locationTaskStatus": 0,
+            "locationRobotStatus": "0",
+            "locationContainerStatus": 2,
+            "length": 1.2,
+            "width": 1.2,
+            "allocatedRobot": null,
+            "occupyRobot": null,
+            "allocatedContainerCode": null,
+            "occupyContainerCode": "00000049",
+            "chargerId": null,
+            "locationFunctions": [
+                "BACKUP_CELL",
+                "NOT_ALLOW_TURN_CELL"
+            ]
+        },
+        {
+            "locationCode": "200000063",
+            "location": {
+                "x": 9.0,
+                "y": 17.45,
+                "z": 1.0
+            },
+            "index": null,
+            "hostCellCode": "WAIT_B3F1_CLS",
+            "locationType": "OMNI_DIR_CELL",
+            "locationTaskStatus": 0,
+            "locationRobotStatus": "0",
+            "locationContainerStatus": 0,
+            "length": 1.0,
+            "width": 1.0,
+            "allocatedRobot": null,
+            "occupyRobot": null,
+            "allocatedContainerCode": null,
+            "occupyContainerCode": null,
+            "chargerId": null,
+            "locationFunctions": [
+                "WAIT_CELL"
+            ]
+        },
+        {
+            "locationCode": "200000064",
+            "location": {
+                "x": 9.0,
+                "y": 21.35,
+                "z": 1.0
+            },
+            "index": null,
+            "hostCellCode": "WAIT_B4F1_CLS",
+            "locationType": "OMNI_DIR_CELL",
+            "locationTaskStatus": 0,
+            "locationRobotStatus": "0",
+            "locationContainerStatus": 0,
+            "length": 1.0,
+            "width": 1.0,
+            "allocatedRobot": null,
+            "occupyRobot": null,
+            "allocatedContainerCode": null,
+            "occupyContainerCode": null,
+            "chargerId": null,
+            "locationFunctions": [
+                "BACKUP_CELL",
+                "WAIT_CELL"
+            ]
+        },
+        {
+            "locationCode": "200000065",
+            "location": {
+                "x": 9.0,
+                "y": 44.2,
+                "z": 1.0
+            },
+            "index": null,
+            "hostCellCode": null,
+            "locationType": "OMNI_DIR_CELL",
+            "locationTaskStatus": 0,
+            "locationRobotStatus": "0",
+            "locationContainerStatus": 0,
+            "length": 1.0,
+            "width": 1.0,
+            "allocatedRobot": null,
+            "occupyRobot": null,
+            "allocatedContainerCode": null,
+            "occupyContainerCode": null,
+            "chargerId": null,
+            "locationFunctions": null
+        },
+        {
+            "locationCode": "200000066",
+            "location": {
+                "x": 9.0,
+                "y": 46.162,
+                "z": 1.0
+            },
+            "index": null,
+            "hostCellCode": null,
+            "locationType": "OMNI_DIR_CELL",
+            "locationTaskStatus": 0,
+            "locationRobotStatus": "0",
+            "locationContainerStatus": 0,
+            "length": 1.0,
+            "width": 1.0,
+            "allocatedRobot": null,
+            "occupyRobot": null,
+            "allocatedContainerCode": null,
+            "occupyContainerCode": null,
+            "chargerId": null,
+            "locationFunctions": null
+        },
+        {
+            "locationCode": "200000067",
+            "location": {
+                "x": 45.34,
+                "y": 18.0,
+                "z": 1.0
+            },
+            "index": null,
+            "hostCellCode": null,
+            "locationType": "OMNI_DIR_CELL",
+            "locationTaskStatus": 0,
+            "locationRobotStatus": "0",
+            "locationContainerStatus": 0,
+            "length": 0.2,
+            "width": 0.2,
+            "allocatedRobot": null,
+            "occupyRobot": null,
+            "allocatedContainerCode": null,
+            "occupyContainerCode": null,
+            "chargerId": null,
+            "locationFunctions": null
+        },
+        {
+            "locationCode": "200000069",
+            "location": {
+                "x": 43.868,
+                "y": 18.0,
+                "z": 1.0
+            },
+            "index": null,
+            "hostCellCode": null,
+            "locationType": "OMNI_DIR_CELL",
+            "locationTaskStatus": 0,
+            "locationRobotStatus": "0",
+            "locationContainerStatus": 0,
+            "length": 0.2,
+            "width": 0.2,
+            "allocatedRobot": null,
+            "occupyRobot": null,
+            "allocatedContainerCode": null,
+            "occupyContainerCode": null,
+            "chargerId": null,
+            "locationFunctions": null
+        },
+        {
+            "locationCode": "200000070",
+            "location": {
+                "x": 10.556,
+                "y": 47.7,
+                "z": 1.0
+            },
+            "index": null,
+            "hostCellCode": null,
+            "locationType": "OMNI_DIR_CELL",
+            "locationTaskStatus": 0,
+            "locationRobotStatus": "0",
+            "locationContainerStatus": 0,
+            "length": 1.0,
+            "width": 1.0,
+            "allocatedRobot": null,
+            "occupyRobot": null,
+            "allocatedContainerCode": null,
+            "occupyContainerCode": null,
+            "chargerId": null,
+            "locationFunctions": [
+                "QUEUE_CELL",
+                "NOT_ALLOW_TURN_CELL"
+            ]
+        },
+        {
+            "locationCode": "200000071",
+            "location": {
+                "x": 8.67,
+                "y": 54.036,
+                "z": 1.0
+            },
+            "index": null,
+            "hostCellCode": null,
+            "locationType": "OMNI_DIR_CELL",
+            "locationTaskStatus": 0,
+            "locationRobotStatus": "0",
+            "locationContainerStatus": 0,
+            "length": 1.0,
+            "width": 1.0,
+            "allocatedRobot": null,
+            "occupyRobot": null,
+            "allocatedContainerCode": null,
+            "occupyContainerCode": null,
+            "chargerId": null,
+            "locationFunctions": [
+                "NOT_ALLOW_TURN_CELL"
+            ]
+        },
+        {
+            "locationCode": "200000072",
+            "location": {
+                "x": 48.5,
+                "y": 17.882,
+                "z": 1.0
+            },
+            "index": null,
+            "hostCellCode": null,
+            "locationType": "OMNI_DIR_CELL",
+            "locationTaskStatus": 0,
+            "locationRobotStatus": "2",
+            "locationContainerStatus": 0,
+            "length": 0.75,
+            "width": 0.75,
+            "allocatedRobot": null,
+            "occupyRobot": 3855009,
+            "allocatedContainerCode": null,
+            "occupyContainerCode": null,
+            "chargerId": null,
+            "locationFunctions": [
+                "RESTART_CELL",
+                "REST_CELL"
+            ]
+        },
+        {
+            "locationCode": "200000073",
+            "location": {
+                "x": 7.615,
+                "y": 33.7,
+                "z": 1.0
+            },
+            "index": null,
+            "hostCellCode": null,
+            "locationType": "OMNI_DIR_CELL",
+            "locationTaskStatus": 0,
+            "locationRobotStatus": "0",
+            "locationContainerStatus": 0,
+            "length": 1.0,
+            "width": 1.0,
+            "allocatedRobot": null,
+            "occupyRobot": null,
+            "allocatedContainerCode": null,
+            "occupyContainerCode": null,
+            "chargerId": null,
+            "locationFunctions": [
+                "NOT_ALLOW_TURN_CELL"
+            ]
+        },
+        {
+            "locationCode": "200000074",
+            "location": {
+                "x": 7.615,
+                "y": 42.0,
+                "z": 1.0
+            },
+            "index": null,
+            "hostCellCode": null,
+            "locationType": "OMNI_DIR_CELL",
+            "locationTaskStatus": 0,
+            "locationRobotStatus": "0",
+            "locationContainerStatus": 0,
+            "length": 1.0,
+            "width": 1.0,
+            "allocatedRobot": null,
+            "occupyRobot": null,
+            "allocatedContainerCode": null,
+            "occupyContainerCode": null,
+            "chargerId": null,
+            "locationFunctions": [
+                "NOT_ALLOW_TURN_CELL",
+                "RESTART_CELL",
+                "REST_CELL"
+            ]
+        },
+        {
+            "locationCode": "200000075",
+            "location": {
+                "x": 10.848,
+                "y": 21.35,
+                "z": 1.0
+            },
+            "index": null,
+            "hostCellCode": null,
+            "locationType": "OMNI_DIR_CELL",
+            "locationTaskStatus": 0,
+            "locationRobotStatus": "0",
+            "locationContainerStatus": 0,
+            "length": 1.0,
+            "width": 1.0,
+            "allocatedRobot": null,
+            "occupyRobot": null,
+            "allocatedContainerCode": null,
+            "occupyContainerCode": null,
+            "chargerId": null,
+            "locationFunctions": [
+                "NOT_ALLOW_TURN_CELL"
+            ]
+        },
+        {
+            "locationCode": "200000076",
+            "location": {
+                "x": 43.65,
+                "y": 13.5,
+                "z": 1.0
+            },
+            "index": null,
+            "hostCellCode": null,
+            "locationType": "OMNI_DIR_CELL",
+            "locationTaskStatus": 0,
+            "locationRobotStatus": "0",
+            "locationContainerStatus": 0,
+            "length": 1.0,
+            "width": 1.0,
+            "allocatedRobot": null,
+            "occupyRobot": null,
+            "allocatedContainerCode": null,
+            "occupyContainerCode": null,
+            "chargerId": null,
+            "locationFunctions": null
+        },
+        {
+            "locationCode": "200000077",
+            "location": {
+                "x": 41.1,
+                "y": 13.5,
+                "z": 1.0
+            },
+            "index": null,
+            "hostCellCode": null,
+            "locationType": "OMNI_DIR_CELL",
+            "locationTaskStatus": 0,
+            "locationRobotStatus": "0",
+            "locationContainerStatus": 0,
+            "length": 1.0,
+            "width": 1.0,
+            "allocatedRobot": null,
+            "occupyRobot": null,
+            "allocatedContainerCode": null,
+            "occupyContainerCode": null,
+            "chargerId": null,
+            "locationFunctions": null
+        },
+        {
+            "locationCode": "200000078",
+            "location": {
+                "x": 19.9,
+                "y": 16.75,
+                "z": 1.0
+            },
+            "index": null,
+            "hostCellCode": null,
+            "locationType": "OMNI_DIR_CELL",
+            "locationTaskStatus": 0,
+            "locationRobotStatus": "0",
+            "locationContainerStatus": 0,
+            "length": 1.0,
+            "width": 1.0,
+            "allocatedRobot": null,
+            "occupyRobot": null,
+            "allocatedContainerCode": null,
+            "occupyContainerCode": null,
+            "chargerId": null,
+            "locationFunctions": [
+                "RESTART_CELL",
+                "REST_CELL"
+            ]
+        },
+        {
+            "locationCode": "200000079",
+            "location": {
+                "x": 43.868,
+                "y": 18.7,
+                "z": 1.0
+            },
+            "index": null,
+            "hostCellCode": null,
+            "locationType": "OMNI_DIR_CELL",
+            "locationTaskStatus": 0,
+            "locationRobotStatus": "0",
+            "locationContainerStatus": 0,
+            "length": 0.2,
+            "width": 0.2,
+            "allocatedRobot": null,
+            "occupyRobot": null,
+            "allocatedContainerCode": null,
+            "occupyContainerCode": null,
+            "chargerId": null,
+            "locationFunctions": null
+        },
+        {
+            "locationCode": "200000080",
+            "location": {
+                "x": 45.34,
+                "y": 18.7,
+                "z": 1.0
+            },
+            "index": null,
+            "hostCellCode": null,
+            "locationType": "OMNI_DIR_CELL",
+            "locationTaskStatus": 0,
+            "locationRobotStatus": "0",
+            "locationContainerStatus": 0,
+            "length": 0.2,
+            "width": 0.2,
+            "allocatedRobot": null,
+            "occupyRobot": null,
+            "allocatedContainerCode": null,
+            "occupyContainerCode": null,
+            "chargerId": null,
+            "locationFunctions": null
+        },
+        {
+            "locationCode": "100000026",
+            "location": {
+                "x": 30.15,
+                "y": 9.6,
+                "z": 2.0
+            },
+            "index": null,
+            "hostCellCode": null,
+            "locationType": "OMNI_DIR_CELL",
+            "locationTaskStatus": 0,
+            "locationRobotStatus": "0",
+            "locationContainerStatus": 0,
+            "length": 1.0,
+            "width": 1.0,
+            "allocatedRobot": null,
+            "occupyRobot": null,
+            "allocatedContainerCode": null,
+            "occupyContainerCode": null,
+            "chargerId": null,
+            "locationFunctions": [
+                "RESTART_CELL",
+                "REST_CELL"
+            ]
+        },
+        {
+            "locationCode": "200000012",
+            "location": {
+                "x": 30.15,
+                "y": 11.155,
+                "z": 2.0
+            },
+            "index": null,
+            "hostCellCode": null,
+            "locationType": "OMNI_DIR_CELL",
+            "locationTaskStatus": 0,
+            "locationRobotStatus": "0",
+            "locationContainerStatus": 0,
+            "length": 1.0,
+            "width": 1.0,
+            "allocatedRobot": null,
+            "occupyRobot": null,
+            "allocatedContainerCode": null,
+            "occupyContainerCode": null,
+            "chargerId": null,
+            "locationFunctions": [
+                "NOT_ALLOW_TURN_CELL"
+            ]
+        },
+        {
+            "locationCode": "200000013",
+            "location": {
+                "x": 30.751,
+                "y": 13.006,
+                "z": 2.0
+            },
+            "index": null,
+            "hostCellCode": null,
+            "locationType": "OMNI_DIR_CELL",
+            "locationTaskStatus": 0,
+            "locationRobotStatus": "0",
+            "locationContainerStatus": 0,
+            "length": 1.0,
+            "width": 1.0,
+            "allocatedRobot": null,
+            "occupyRobot": null,
+            "allocatedContainerCode": null,
+            "occupyContainerCode": null,
+            "chargerId": null,
+            "locationFunctions": [
+                "BACKUP_CELL"
+            ]
+        },
+        {
+            "locationCode": "100000027",
+            "location": {
+                "x": 30.15,
+                "y": 9.7,
+                "z": 3.0
+            },
+            "index": null,
+            "hostCellCode": null,
+            "locationType": "OMNI_DIR_CELL",
+            "locationTaskStatus": 0,
+            "locationRobotStatus": "0",
+            "locationContainerStatus": 0,
+            "length": 1.0,
+            "width": 1.0,
+            "allocatedRobot": null,
+            "occupyRobot": null,
+            "allocatedContainerCode": null,
+            "occupyContainerCode": null,
+            "chargerId": null,
+            "locationFunctions": [
+                "RESTART_CELL"
+            ]
+        },
+        {
+            "locationCode": "200000010",
+            "location": {
+                "x": 30.15,
+                "y": 11.2,
+                "z": 3.0
+            },
+            "index": null,
+            "hostCellCode": null,
+            "locationType": "OMNI_DIR_CELL",
+            "locationTaskStatus": 0,
+            "locationRobotStatus": "0",
+            "locationContainerStatus": 0,
+            "length": 1.0,
+            "width": 1.0,
+            "allocatedRobot": null,
+            "occupyRobot": null,
+            "allocatedContainerCode": null,
+            "occupyContainerCode": null,
+            "chargerId": null,
+            "locationFunctions": [
+                "NOT_ALLOW_TURN_CELL"
+            ]
+        },
+        {
+            "locationCode": "200000011",
+            "location": {
+                "x": 30.7,
+                "y": 12.7,
+                "z": 3.0
+            },
+            "index": null,
+            "hostCellCode": null,
+            "locationType": "OMNI_DIR_CELL",
+            "locationTaskStatus": 0,
+            "locationRobotStatus": "0",
+            "locationContainerStatus": 0,
+            "length": 1.0,
+            "width": 1.0,
+            "allocatedRobot": null,
+            "occupyRobot": null,
+            "allocatedContainerCode": null,
+            "occupyContainerCode": null,
+            "chargerId": null,
+            "locationFunctions": [
+                "BACKUP_CELL"
+            ]
+        },
+        {
+            "locationCode": "200000014",
+            "location": {
+                "x": 30.7,
+                "y": 14.2,
+                "z": 3.0
+            },
+            "index": null,
+            "hostCellCode": null,
+            "locationType": "OMNI_DIR_CELL",
+            "locationTaskStatus": 0,
+            "locationRobotStatus": "0",
+            "locationContainerStatus": 0,
+            "length": 1.0,
+            "width": 1.0,
+            "allocatedRobot": null,
+            "occupyRobot": null,
+            "allocatedContainerCode": null,
+            "occupyContainerCode": null,
+            "chargerId": null,
+            "locationFunctions": null
+        },
+        {
+            "locationCode": "200000015",
+            "location": {
+                "x": 29.2,
+                "y": 15.4,
+                "z": 3.0
+            },
+            "index": null,
+            "hostCellCode": null,
+            "locationType": "OMNI_DIR_CELL",
+            "locationTaskStatus": 0,
+            "locationRobotStatus": "0",
+            "locationContainerStatus": 0,
+            "length": 1.0,
+            "width": 1.0,
+            "allocatedRobot": null,
+            "occupyRobot": null,
+            "allocatedContainerCode": null,
+            "occupyContainerCode": null,
+            "chargerId": null,
+            "locationFunctions": null
+        },
+        {
+            "locationCode": "200000016",
+            "location": {
+                "x": 27.7,
+                "y": 15.4,
+                "z": 3.0
+            },
+            "index": null,
+            "hostCellCode": null,
+            "locationType": "OMNI_DIR_CELL",
+            "locationTaskStatus": 0,
+            "locationRobotStatus": "0",
+            "locationContainerStatus": 0,
+            "length": 1.0,
+            "width": 1.0,
+            "allocatedRobot": null,
+            "occupyRobot": null,
+            "allocatedContainerCode": null,
+            "occupyContainerCode": null,
+            "chargerId": null,
+            "locationFunctions": null
+        },
+        {
+            "locationCode": "200000017",
+            "location": {
+                "x": 26.2,
+                "y": 15.4,
+                "z": 3.0
+            },
+            "index": null,
+            "hostCellCode": null,
+            "locationType": "OMNI_DIR_CELL",
+            "locationTaskStatus": 0,
+            "locationRobotStatus": "0",
+            "locationContainerStatus": 0,
+            "length": 1.0,
+            "width": 1.0,
+            "allocatedRobot": null,
+            "occupyRobot": null,
+            "allocatedContainerCode": null,
+            "occupyContainerCode": null,
+            "chargerId": null,
+            "locationFunctions": null
+        },
+        {
+            "locationCode": "200000018",
+            "location": {
+                "x": 24.8,
+                "y": 15.4,
+                "z": 3.0
+            },
+            "index": null,
+            "hostCellCode": null,
+            "locationType": "OMNI_DIR_CELL",
+            "locationTaskStatus": 0,
+            "locationRobotStatus": "0",
+            "locationContainerStatus": 0,
+            "length": 1.0,
+            "width": 1.0,
+            "allocatedRobot": null,
+            "occupyRobot": null,
+            "allocatedContainerCode": null,
+            "occupyContainerCode": null,
+            "chargerId": null,
+            "locationFunctions": null
+        },
+        {
+            "locationCode": "200000019",
+            "location": {
+                "x": 19.9,
+                "y": 14.0,
+                "z": 3.0
+            },
+            "index": null,
+            "hostCellCode": null,
+            "locationType": "OMNI_DIR_CELL",
+            "locationTaskStatus": 0,
+            "locationRobotStatus": "0",
+            "locationContainerStatus": 0,
+            "length": 1.0,
+            "width": 1.0,
+            "allocatedRobot": null,
+            "occupyRobot": null,
+            "allocatedContainerCode": null,
+            "occupyContainerCode": null,
+            "chargerId": null,
+            "locationFunctions": null
+        },
+        {
+            "locationCode": "200000020",
+            "location": {
+                "x": 19.9,
+                "y": 13.0,
+                "z": 3.0
+            },
+            "index": null,
+            "hostCellCode": null,
+            "locationType": "OMNI_DIR_CELL",
+            "locationTaskStatus": 0,
+            "locationRobotStatus": "0",
+            "locationContainerStatus": 0,
+            "length": 1.0,
+            "width": 1.0,
+            "allocatedRobot": null,
+            "occupyRobot": null,
+            "allocatedContainerCode": null,
+            "occupyContainerCode": null,
+            "chargerId": null,
+            "locationFunctions": null
+        },
+        {
+            "locationCode": "200000021",
+            "location": {
+                "x": 19.9,
+                "y": 12.0,
+                "z": 3.0
+            },
+            "index": null,
+            "hostCellCode": null,
+            "locationType": "OMNI_DIR_CELL",
+            "locationTaskStatus": 0,
+            "locationRobotStatus": "0",
+            "locationContainerStatus": 0,
+            "length": 1.0,
+            "width": 1.0,
+            "allocatedRobot": null,
+            "occupyRobot": null,
+            "allocatedContainerCode": null,
+            "occupyContainerCode": null,
+            "chargerId": null,
+            "locationFunctions": null
+        },
+        {
+            "locationCode": "200000022",
+            "location": {
+                "x": 19.9,
+                "y": 11.0,
+                "z": 3.0
+            },
+            "index": null,
+            "hostCellCode": null,
+            "locationType": "OMNI_DIR_CELL",
+            "locationTaskStatus": 0,
+            "locationRobotStatus": "0",
+            "locationContainerStatus": 0,
+            "length": 1.0,
+            "width": 1.0,
+            "allocatedRobot": null,
+            "occupyRobot": null,
+            "allocatedContainerCode": null,
+            "occupyContainerCode": null,
+            "chargerId": null,
+            "locationFunctions": null
+        },
+        {
+            "locationCode": "200000023",
+            "location": {
+                "x": 21.2,
+                "y": 14.0,
+                "z": 3.0
+            },
+            "index": null,
+            "hostCellCode": null,
+            "locationType": "OMNI_DIR_CELL",
+            "locationTaskStatus": 0,
+            "locationRobotStatus": "0",
+            "locationContainerStatus": 0,
+            "length": 1.0,
+            "width": 1.0,
+            "allocatedRobot": null,
+            "occupyRobot": null,
+            "allocatedContainerCode": null,
+            "occupyContainerCode": null,
+            "chargerId": null,
+            "locationFunctions": null
+        },
+        {
+            "locationCode": "200000024",
+            "location": {
+                "x": 21.2,
+                "y": 13.0,
+                "z": 3.0
+            },
+            "index": null,
+            "hostCellCode": null,
+            "locationType": "OMNI_DIR_CELL",
+            "locationTaskStatus": 0,
+            "locationRobotStatus": "0",
+            "locationContainerStatus": 0,
+            "length": 1.0,
+            "width": 1.0,
+            "allocatedRobot": null,
+            "occupyRobot": null,
+            "allocatedContainerCode": null,
+            "occupyContainerCode": null,
+            "chargerId": null,
+            "locationFunctions": null
+        },
+        {
+            "locationCode": "200000025",
+            "location": {
+                "x": 21.2,
+                "y": 12.0,
+                "z": 3.0
+            },
+            "index": null,
+            "hostCellCode": null,
+            "locationType": "OMNI_DIR_CELL",
+            "locationTaskStatus": 0,
+            "locationRobotStatus": "0",
+            "locationContainerStatus": 0,
+            "length": 1.0,
+            "width": 1.0,
+            "allocatedRobot": null,
+            "occupyRobot": null,
+            "allocatedContainerCode": null,
+            "occupyContainerCode": null,
+            "chargerId": null,
+            "locationFunctions": null
+        },
+        {
+            "locationCode": "200000026",
+            "location": {
+                "x": 21.2,
+                "y": 11.0,
+                "z": 3.0
+            },
+            "index": null,
+            "hostCellCode": null,
+            "locationType": "OMNI_DIR_CELL",
+            "locationTaskStatus": 0,
+            "locationRobotStatus": "0",
+            "locationContainerStatus": 0,
+            "length": 1.0,
+            "width": 1.0,
+            "allocatedRobot": null,
+            "occupyRobot": null,
+            "allocatedContainerCode": null,
+            "occupyContainerCode": null,
+            "chargerId": null,
+            "locationFunctions": [
+                "RESTART_CELL",
+                "REST_CELL"
+            ]
+        },
+        {
+            "locationCode": "200000027",
+            "location": {
+                "x": 23.5,
+                "y": 15.4,
+                "z": 3.0
+            },
+            "index": null,
+            "hostCellCode": null,
+            "locationType": "OMNI_DIR_CELL",
+            "locationTaskStatus": 0,
+            "locationRobotStatus": "0",
+            "locationContainerStatus": 0,
+            "length": 1.0,
+            "width": 1.0,
+            "allocatedRobot": null,
+            "occupyRobot": null,
+            "allocatedContainerCode": null,
+            "occupyContainerCode": null,
+            "chargerId": null,
+            "locationFunctions": null
+        },
+        {
+            "locationCode": "200000028",
+            "location": {
+                "x": 22.5,
+                "y": 14.0,
+                "z": 3.0
+            },
+            "index": null,
+            "hostCellCode": null,
+            "locationType": "OMNI_DIR_CELL",
+            "locationTaskStatus": 0,
+            "locationRobotStatus": "0",
+            "locationContainerStatus": 0,
+            "length": 1.0,
+            "width": 1.0,
+            "allocatedRobot": null,
+            "occupyRobot": null,
+            "allocatedContainerCode": null,
+            "occupyContainerCode": null,
+            "chargerId": null,
+            "locationFunctions": null
+        },
+        {
+            "locationCode": "200000029",
+            "location": {
+                "x": 22.5,
+                "y": 13.0,
+                "z": 3.0
+            },
+            "index": null,
+            "hostCellCode": null,
+            "locationType": "OMNI_DIR_CELL",
+            "locationTaskStatus": 0,
+            "locationRobotStatus": "0",
+            "locationContainerStatus": 0,
+            "length": 1.0,
+            "width": 1.0,
+            "allocatedRobot": null,
+            "occupyRobot": null,
+            "allocatedContainerCode": null,
+            "occupyContainerCode": null,
+            "chargerId": null,
+            "locationFunctions": null
+        },
+        {
+            "locationCode": "200000030",
+            "location": {
+                "x": 22.5,
+                "y": 12.0,
+                "z": 3.0
+            },
+            "index": null,
+            "hostCellCode": null,
+            "locationType": "OMNI_DIR_CELL",
+            "locationTaskStatus": 0,
+            "locationRobotStatus": "0",
+            "locationContainerStatus": 0,
+            "length": 1.0,
+            "width": 1.0,
+            "allocatedRobot": null,
+            "occupyRobot": null,
+            "allocatedContainerCode": null,
+            "occupyContainerCode": null,
+            "chargerId": null,
+            "locationFunctions": null
+        },
+        {
+            "locationCode": "200000031",
+            "location": {
+                "x": 22.5,
+                "y": 11.0,
+                "z": 3.0
+            },
+            "index": null,
+            "hostCellCode": null,
+            "locationType": "OMNI_DIR_CELL",
+            "locationTaskStatus": 0,
+            "locationRobotStatus": "0",
+            "locationContainerStatus": 0,
+            "length": 1.0,
+            "width": 1.0,
+            "allocatedRobot": null,
+            "occupyRobot": null,
+            "allocatedContainerCode": null,
+            "occupyContainerCode": null,
+            "chargerId": null,
+            "locationFunctions": null
+        },
+        {
+            "locationCode": "200000032",
+            "location": {
+                "x": 23.5,
+                "y": 14.0,
+                "z": 3.0
+            },
+            "index": null,
+            "hostCellCode": null,
+            "locationType": "OMNI_DIR_CELL",
+            "locationTaskStatus": 0,
+            "locationRobotStatus": "0",
+            "locationContainerStatus": 0,
+            "length": 1.0,
+            "width": 1.0,
+            "allocatedRobot": null,
+            "occupyRobot": null,
+            "allocatedContainerCode": null,
+            "occupyContainerCode": null,
+            "chargerId": null,
+            "locationFunctions": null
+        },
+        {
+            "locationCode": "200000033",
+            "location": {
+                "x": 23.5,
+                "y": 13.0,
+                "z": 3.0
+            },
+            "index": null,
+            "hostCellCode": null,
+            "locationType": "OMNI_DIR_CELL",
+            "locationTaskStatus": 0,
+            "locationRobotStatus": "0",
+            "locationContainerStatus": 0,
+            "length": 1.0,
+            "width": 1.0,
+            "allocatedRobot": null,
+            "occupyRobot": null,
+            "allocatedContainerCode": null,
+            "occupyContainerCode": null,
+            "chargerId": null,
+            "locationFunctions": null
+        },
+        {
+            "locationCode": "200000034",
+            "location": {
+                "x": 23.5,
+                "y": 12.0,
+                "z": 3.0
+            },
+            "index": null,
+            "hostCellCode": null,
+            "locationType": "OMNI_DIR_CELL",
+            "locationTaskStatus": 0,
+            "locationRobotStatus": "0",
+            "locationContainerStatus": 0,
+            "length": 1.0,
+            "width": 1.0,
+            "allocatedRobot": null,
+            "occupyRobot": null,
+            "allocatedContainerCode": null,
+            "occupyContainerCode": null,
+            "chargerId": null,
+            "locationFunctions": null
+        },
+        {
+            "locationCode": "200000035",
+            "location": {
+                "x": 23.5,
+                "y": 11.0,
+                "z": 3.0
+            },
+            "index": null,
+            "hostCellCode": null,
+            "locationType": "OMNI_DIR_CELL",
+            "locationTaskStatus": 0,
+            "locationRobotStatus": "0",
+            "locationContainerStatus": 0,
+            "length": 1.0,
+            "width": 1.0,
+            "allocatedRobot": null,
+            "occupyRobot": null,
+            "allocatedContainerCode": null,
+            "occupyContainerCode": null,
+            "chargerId": null,
+            "locationFunctions": null
+        },
+        {
+            "locationCode": "200000036",
+            "location": {
+                "x": 22.5,
+                "y": 15.4,
+                "z": 3.0
+            },
+            "index": null,
+            "hostCellCode": null,
+            "locationType": "OMNI_DIR_CELL",
+            "locationTaskStatus": 0,
+            "locationRobotStatus": "0",
+            "locationContainerStatus": 0,
+            "length": 1.0,
+            "width": 1.0,
+            "allocatedRobot": null,
+            "occupyRobot": null,
+            "allocatedContainerCode": null,
+            "occupyContainerCode": null,
+            "chargerId": null,
+            "locationFunctions": null
+        },
+        {
+            "locationCode": "200000037",
+            "location": {
+                "x": 21.2,
+                "y": 15.4,
+                "z": 3.0
+            },
+            "index": null,
+            "hostCellCode": null,
+            "locationType": "OMNI_DIR_CELL",
+            "locationTaskStatus": 0,
+            "locationRobotStatus": "0",
+            "locationContainerStatus": 0,
+            "length": 1.0,
+            "width": 1.0,
+            "allocatedRobot": null,
+            "occupyRobot": null,
+            "allocatedContainerCode": null,
+            "occupyContainerCode": null,
+            "chargerId": null,
+            "locationFunctions": null
+        },
+        {
+            "locationCode": "200000038",
+            "location": {
+                "x": 24.8,
+                "y": 14.0,
+                "z": 3.0
+            },
+            "index": null,
+            "hostCellCode": null,
+            "locationType": "OMNI_DIR_CELL",
+            "locationTaskStatus": 0,
+            "locationRobotStatus": "0",
+            "locationContainerStatus": 0,
+            "length": 1.0,
+            "width": 1.0,
+            "allocatedRobot": null,
+            "occupyRobot": null,
+            "allocatedContainerCode": null,
+            "occupyContainerCode": null,
+            "chargerId": null,
+            "locationFunctions": null
+        },
+        {
+            "locationCode": "200000039",
+            "location": {
+                "x": 19.9,
+                "y": 15.4,
+                "z": 3.0
+            },
+            "index": null,
+            "hostCellCode": null,
+            "locationType": "OMNI_DIR_CELL",
+            "locationTaskStatus": 0,
+            "locationRobotStatus": "0",
+            "locationContainerStatus": 0,
+            "length": 1.0,
+            "width": 1.0,
+            "allocatedRobot": null,
+            "occupyRobot": null,
+            "allocatedContainerCode": null,
+            "occupyContainerCode": null,
+            "chargerId": null,
+            "locationFunctions": null
+        },
+        {
+            "locationCode": "200000040",
+            "location": {
+                "x": 24.8,
+                "y": 13.0,
+                "z": 3.0
+            },
+            "index": null,
+            "hostCellCode": null,
+            "locationType": "OMNI_DIR_CELL",
+            "locationTaskStatus": 0,
+            "locationRobotStatus": "0",
+            "locationContainerStatus": 0,
+            "length": 1.0,
+            "width": 1.0,
+            "allocatedRobot": null,
+            "occupyRobot": null,
+            "allocatedContainerCode": null,
+            "occupyContainerCode": null,
+            "chargerId": null,
+            "locationFunctions": null
+        },
+        {
+            "locationCode": "200000041",
+            "location": {
+                "x": 24.8,
+                "y": 12.0,
+                "z": 3.0
+            },
+            "index": null,
+            "hostCellCode": null,
+            "locationType": "OMNI_DIR_CELL",
+            "locationTaskStatus": 0,
+            "locationRobotStatus": "0",
+            "locationContainerStatus": 0,
+            "length": 1.0,
+            "width": 1.0,
+            "allocatedRobot": null,
+            "occupyRobot": null,
+            "allocatedContainerCode": null,
+            "occupyContainerCode": null,
+            "chargerId": null,
+            "locationFunctions": null
+        },
+        {
+            "locationCode": "200000042",
+            "location": {
+                "x": 24.8,
+                "y": 11.0,
+                "z": 3.0
+            },
+            "index": null,
+            "hostCellCode": null,
+            "locationType": "OMNI_DIR_CELL",
+            "locationTaskStatus": 0,
+            "locationRobotStatus": "0",
+            "locationContainerStatus": 0,
+            "length": 1.0,
+            "width": 1.0,
+            "allocatedRobot": null,
+            "occupyRobot": null,
+            "allocatedContainerCode": null,
+            "occupyContainerCode": null,
+            "chargerId": null,
+            "locationFunctions": null
+        }
+    ]
+}
+
+{
+    "header": {
+        "responseId": "e63cad2b-e02b-472c-8506-9d884f37aa82",
+        "msgType": "RobotInfoMsg",
+        "code": "0",
+        "requestTime": null,
+        "clientCode": null,
+        "msg": "Successful invocation"
+    },
+    "body": [
+        {
+            "robot": "3855010",
+            "robotProduct": "M100L",
+            "robotConnectStatus": "NORMAL",
+            "robotStopStatus": "NORMAL",
+            "robotError": "",
+            "powerPercent": "75",
+            "angle": "91.9",
+            "speed": "0.0",
+            "location": {
+                "x": 45.311,
+                "y": 17.243,
+                "z": 1.0
+            },
+            "locationIndex": {
+                "x": 0,
+                "y": 0,
+                "z": 1
+            },
+            "locationCode": "200000002",
+            "hostLocationCode": null,
+            "robotPathMode": "IDLE",
+            "robotTaskId": 3002730,
+            "path": [],
+            "voltage": 55350.0,
+            "current": 7380.0,
+            "temperature": 27.0,
+            "ip": "10.80.235.254",
+            "instanceId": null,
+            "taskCode": null,
+            "containerCode": null
+        },
+        {
+            "robot": "3855009",
+            "robotProduct": "M100L",
+            "robotConnectStatus": "NORMAL",
+            "robotStopStatus": "NORMAL",
+            "robotError": "",
+            "powerPercent": "68",
+            "angle": "177.69",
+            "speed": "0.0",
+            "location": {
+                "x": 48.497,
+                "y": 17.889,
+                "z": 1.0
+            },
+            "locationIndex": {
+                "x": 0,
+                "y": 0,
+                "z": 1
+            },
+            "locationCode": "200000072",
+            "hostLocationCode": null,
+            "robotPathMode": "IDLE",
+            "robotTaskId": null,
+            "path": [],
+            "voltage": 53290.0,
+            "current": 0.0,
+            "temperature": 26.0,
+            "ip": "10.80.235.253",
+            "instanceId": null,
+            "taskCode": null,
+            "containerCode": null
+        }
+    ]
+}

@@ -44,6 +44,9 @@ const ApiDebugPage = () => {
         e.preventDefault();
         try {
             const hashHex = await simpleHash(password);
+            console.log(password);
+
+            console.log(hashHex);
 
             if (hashHex === DEBUG_ACCESS_HASH) {
                 setIsAuthenticated(true);

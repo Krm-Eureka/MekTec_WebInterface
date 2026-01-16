@@ -35,8 +35,6 @@ export const API_PAYLOAD_TEMPLATES = {
     // - instanceStatus: "40" = Error
     'WorkflowInstanceListMsg': {
         "msgType": "WorkflowInstanceListMsg",
-        "pageNo": "INTEGER",
-        "pageSize": "INTEGER",
         "instanceStatus": "STRING" // ใส่สถานะที่ต้องการกรอง หรือลบออกเพื่อดูทั้งหมด
     },
 
